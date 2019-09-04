@@ -71,11 +71,4 @@ body {
         width: 35px;
         height: 35px;
     }
-    #follow {
-        left:10px;
-    }
-    #follow-button {
-        width: 50%;
-        height: auto;
-    }
 }
