@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Random Trump</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Random Trump" />
+        <meta name="keywords" content="random trump, donald trump, trump" />
+        <meta property="og:title" content="Random Trump" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Random Trump" />
+        <meta property="og:url" content="https://randomtrump.com" />
+        <meta property="og:image" content="https://randomtrump.com/images/trump.png" />
+        <meta property="og:site_name" content="randomtrump.com" />
+
+        <link rel="stylesheet" href="css/style.css">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="images/favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        
+        <script>
+            function getQueryVariable(variable)
+            {
+                let query = window.location.search.substring(1);
+                let vars = query.split("&");
+                for (let i=0;i<vars.length;i++) {
+                    let pair = vars[i].split("=");
+                    if(pair[0] == variable){return pair[1];}
+                }
+                return(false);
+            }
+
+            // Add elemnt to page. Either img or iframe
+            function addElement(type) {
+                let elem = document.createElement(type);
+                if (type == "img") {
+                    elem.setAttribute("src", "//media.giphy.com/media/" + getQueryVariable("id") + "/giphy.gif");
+                    elem.setAttribute("alt", "Random Trump");
+                    elem.setAttribute("onclick", "location.href='//randomtrump.com'");
+                }
+                else {
+                    elem.setAttribute("src", "//tv.giphy.com/donald%20trump");
+                }
+                elem.setAttribute("id", "gif-frame");
+                document.getElementById("main-frame").appendChild(elem);
+            }
+
+            // Set image src for Trump
+            function setSTrump() {
+                if (getQueryVariable("id").length > 0) {
+
+                    addElement("img");
+
+                    setTimeout(function() {
+                        location.href = "//randomtrump.com";
+                    },10000); // reload page after 10 seconds
+                }
+                else {
+                    addElement("iframe");
+                }
+            }
+        </script>
+    </head>
+
+    <body onload="setSTrump();">
+        <div id="dumb-circle" onclick="window.open('https://dumbprojects.com', '_blank');"></div>
+        <div id='main-frame'></div>
+
+        <div id="social">
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_twitter"></a>
+            </div>
+            <script src="//static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+        </div>
+
+        <div id="follow">
+            <a href="//twitter.com/randomtrump1" title="Follow Random Trump on Twitter" target="_blank">
+                <img id="follow-button" src="images/followus.png" alt="Follow on Twitter" />
+            </a>
+        </div>
+
+        <!-- Default Statcounter code for Randomtrump.com https://randomtrump.com -->
+        <script>
+            var sc_project=11721306;
+            var sc_invisible=1;
+            var sc_security="dfc5e394";
+        </script>
+        <script src="https://www.statcounter.com/counter/counter.js" async></script>
+        <noscript>
+            <div class="statcounter">
+                <a title="Web Analytics" href="http://statcounter.com/" target="_blank">
+                    <img class="statcounter" src="//c.statcounter.com/11721306/0/dfc5e394/1/" alt="Web Analytics">
+                </a>
+            </div>
+        </noscript>
+        <!-- End of Statcounter Code -->
+    </body>
+</html>
