@@ -45,30 +45,29 @@
                 return(false);
             }
 
-            // Add elemnt to page. Either img or iframe
+            // Add elemnt to page. Either div or iframe
             function addElement(type) {
                 let elem = document.createElement(type);
-                if (type == "img") {
-                    elem.setAttribute("src", "//media.giphy.com/media/" + getQueryVariable("id") + "/giphy.gif");
-                    elem.setAttribute("alt", "Random Trump");
-                    elem.setAttribute("onclick", "location.href='//randomtrump.com'");
+                if (type == "div") {
+                    elem.setAttribute("id", "gif-frame");
+                    document.getElementById("main-frame").appendChild(elem);
+                    document.getElementById("gif-frame").style.backgroundImage = "url(https://media.giphy.com/media/" + getQueryVariable("id") + "/giphy.gif)";
+                    document.getElementById("gif-frame").onclick = function() { location.href = "https://randomtrump.com"; };
                 }
                 else {
                     elem.setAttribute("src", "//tv.giphy.com/donald%20trump");
+                    elem.setAttribute("id", "gif-frame");
+                    document.getElementById("main-frame").appendChild(elem);
                 }
-                elem.setAttribute("id", "gif-frame");
-                document.getElementById("main-frame").appendChild(elem);
             }
 
             // Set image src for Trump
             function setSTrump() {
                 if (getQueryVariable("id").length > 0) {
 
-                    addElement("img");
+                    addElement("div");
 
-                    setTimeout(function() {
-                        location.href = "//randomtrump.com";
-                    },10000); // reload page after 10 seconds
+                    setInterval(function(){ location.href = "https://randomtrump.com"; }, 10000);
                 }
                 else {
                     addElement("iframe");

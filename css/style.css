@@ -17,7 +17,8 @@ body {
     border:none;
     margin:0;
     padding:0;
-    overflow:hidden;
+    background-position: center;
+    background-size: cover;
 }
 #social {
     position:absolute;
