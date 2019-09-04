@@ -70,12 +70,6 @@ body {
     #dumb-circle {
         width: 35px;
         height: 35px;
-        top:10px;
-        left:15px;
-    }
-    #social {
-        top:10px;
-        right:0;
     }
     #follow {
         left:10px;
