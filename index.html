@@ -1,115 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Random Trump</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Random Trump" />
-        <meta name="keywords" content="random trump, donald trump, trump" />
-        <meta property="og:title" content="Random Trump" />
-        <meta property="og:type" content="website" />
-        <meta property="og:description" content="Random Trump" />
-        <meta property="og:url" content="https://randomtrump.com" />
-        <meta property="og:image" content="https://randomtrump.com/images/trump.png" />
-        <meta property="og:site_name" content="randomtrump.com" />
+<head>
+    <title>Random Trump</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Random Trump"/>
+    <meta name="keywords" content="random trump, donald trump, trump"/>
+    <meta property="og:title" content="Random Trump"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="Random Trump"/>
+    <meta property="og:url" content="https://randomtrump.com"/>
+    <meta property="og:image" content="https://randomtrump.com/images/trump.png"/>
+    <meta property="og:site_name" content="randomtrump.com"/>
 
-        <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
-        <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-        <link rel="manifest" href="images/favicon/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-        
-        <script>
-            function getQueryVariable(variable)
-            {
-                let query = window.location.search.substring(1);
-                let vars = query.split("&");
-                for (let i=0;i<vars.length;i++) {
-                    let pair = vars[i].split("=");
-                    if(pair[0] == variable){return pair[1];}
-                }
-                return(false);
-            }
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-            // Add elemnt to page. Either div or iframe
-            function addElement(type) {
-                let elem = document.createElement(type);
-                if (type == "div") {
-                    elem.setAttribute("id", "gif-frame");
-                    document.getElementById("main-frame").appendChild(elem);
-                    document.getElementById("gif-frame").style.backgroundImage = "url(https://media.giphy.com/media/" + getQueryVariable("id") + "/giphy.gif)";
-                    document.getElementById("gif-frame").onclick = function() { location.href = "https://randomtrump.com"; };
-                }
-                else {
-                    elem.setAttribute("src", "//tv.giphy.com/donald%20trump");
-                    elem.setAttribute("id", "gif-frame");
-                    document.getElementById("main-frame").appendChild(elem);
+    <script>
+        function getQueryVariable(variable) {
+            let query = window.location.search.substring(1);
+            let vars = query.split("&");
+            for (let i = 0; i < vars.length; i++) {
+                let pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
                 }
             }
+            return (false);
+        }
 
-            // Set image src for Trump
-            function setTrump() {
-                if (getQueryVariable("id").length > 0) {
-
-                    addElement("div");
-
-                    setInterval(function(){ location.href = "https://randomtrump.com"; }, 10000);
-                }
-                else {
-                    addElement("iframe");
-                }
+        // Add elemnt to page. Either div or iframe
+        function addElement(type) {
+            let elem = document.createElement(type);
+            if (type == "div") {
+                elem.setAttribute("id", "gif-frame");
+                document.getElementById("main-frame").appendChild(elem);
+                document.getElementById("gif-frame").style.backgroundImage = "url(https://media.giphy.com/media/" + getQueryVariable("id") + "/giphy.gif)";
+                document.getElementById("gif-frame").onclick = function () {
+                    location.href = "https://randomtrump.com";
+                };
+            } else {
+                elem.setAttribute("src", "//tv.giphy.com/donald%20trump");
+                elem.setAttribute("id", "gif-frame");
+                document.getElementById("main-frame").appendChild(elem);
             }
-        </script>
-    </head>
+        }
 
-    <body onload="setTrump();">
-        <div id="dumb-circle" onclick="window.open('https://dumbprojects.com', '_blank');"></div>
-        <div id='main-frame'></div>
+        // Set image src for Trump
+        function setTrump() {
+            if (getQueryVariable("id").length > 0) {
 
-        <div id="social">
-            <!-- AddToAny BEGIN -->
-            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-                <a class="a2a_button_facebook"></a>
-                <a class="a2a_button_twitter"></a>
+                addElement("div");
+
+                setInterval(function () {
+                    location.href = "https://randomtrump.com";
+                }, 10000);
+            } else {
+                addElement("iframe");
+            }
+        }
+    </script>
+</head>
+
+<body onload="setTrump();">
+<!--Begin Halloween Flare-->
+<div id="halloween-flare">
+    <div id="other">
+        <div id="spider1">
+            <div id="eye">
+                <p id="pupil"></p>
             </div>
-            <script src="//static.addtoany.com/menu/page.js"></script>
-            <!-- AddToAny END -->
-        </div>
 
-        <div id="follow">
-            <a href="//twitter.com/randomtrump1" title="Follow Random Trump on Twitter" target="_blank">
-                <img id="follow-button" src="images/followus.png" alt="Follow on Twitter" />
-            </a>
-        </div>
-
-        <!-- Default Statcounter code for Randomtrump.com https://randomtrump.com -->
-        <script>
-            var sc_project=11721306;
-            var sc_invisible=1;
-            var sc_security="dfc5e394";
-        </script>
-        <script src="https://www.statcounter.com/counter/counter.js" async></script>
-        <noscript>
-            <div class="statcounter">
-                <a title="Web Analytics" href="http://statcounter.com/" target="_blank">
-                    <img class="statcounter" src="//c.statcounter.com/11721306/0/dfc5e394/1/" alt="Web Analytics">
-                </a>
+            <div id="leg">
+                <p></p>
+                <p></p>
             </div>
-        </noscript>
-        <!-- End of Statcounter Code -->
-    </body>
+
+            <div id="leg2">
+                <p></p>
+                <p></p>
+            </div>
+
+            <div id="leg3">
+                <p></p>
+                <p></p>
+            </div>
+
+            <div id="leg4">
+                <p></p>
+                <p></p>
+            </div>
+
+            <div id="leg5">
+                <p></p>
+                <p></p>
+            </div>
+
+            <div id="leg6">
+                <p></p>
+                <p></p>
+            </div>
+
+            <div id="string"></div>
+        </div>
+        <script src='https://use.edgefonts.net/creepster.js'></script>
+        <div id="letters">
+            <script src='https://use.edgefonts.net/eater.js'></script>
+
+            <script src='https://use.edgefonts.net/nosifer.js'></script>
+            <p>Happy Halloween</p>
+        </div>
+    </div>
+</div>
+<script src="js/bug-min.js"></script>
+<script>
+    function getQueryVariable(variable) {
+        let query = window.location.search.substring(1);
+        let vars = query.split("&");
+        for (let i = 0; i < vars.length; i++) {
+            let pair = vars[i].split("=");
+            if (pair[0] == variable) {
+                return pair[1];
+            }
+        }
+        return (false);
+    }
+
+    let date = new Date();
+    let currentMonth = date.getMonth() + 1;
+    let yourMonth = 10;
+    if (yourMonth == currentMonth || getQueryVariable("theme") == "spooky") {
+        document.getElementById("halloween-flare").style.visibility = "visible";
+        new SpiderController({"mouseOver": "nothing"});
+    }
+</script>
+<!--End Halloween Flare-->
+<div id="dumb-circle" onclick="window.open('https://dumbprojects.com', '_blank');"></div>
+<div id='main-frame'></div>
+
+<div id="social">
+    <!-- AddToAny BEGIN -->
+    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_twitter"></a>
+    </div>
+    <script src="//static.addtoany.com/menu/page.js"></script>
+    <!-- AddToAny END -->
+</div>
+
+<div id="follow">
+    <a href="//twitter.com/randomtrump1" title="Follow Random Trump on Twitter" target="_blank">
+        <img id="follow-button" src="images/followus.png" alt="Follow on Twitter"/>
+    </a>
+</div>
+
+<!-- Default Statcounter code for Randomtrump.com https://randomtrump.com -->
+<script>
+    var sc_project = 11721306;
+    var sc_invisible = 1;
+    var sc_security = "dfc5e394";
+</script>
+<script src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript>
+    <div class="statcounter">
+        <a title="Web Analytics" href="http://statcounter.com/" target="_blank">
+            <img class="statcounter" src="//c.statcounter.com/11721306/0/dfc5e394/1/" alt="Web Analytics">
+        </a>
+    </div>
+</noscript>
+<!-- End of Statcounter Code -->
+</body>
 </html>
